@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div v-for="(user,index) in users">
+            <div class="my_card">
+                <img :src="user.avatar" alt="">
+                <p>{{ user.first_name }}</p>
+                <p>{{ user.last_name }}</p>
+                <button @click="deleteUser(index)">delete</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <style>
+        .my_card{
+            text-align: center;
+            border: 1px solid black;
+            margin: 1rem 45rem 1rem 45rem;
+            padding: 1rem;
+        }
+    </style>
+</body>
+</html>
